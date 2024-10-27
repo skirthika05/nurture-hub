@@ -105,18 +105,7 @@ function App() {
                 </ul>
           
           {/* Additional images below discover */}
-          <ul className="resources-list">
-            <li><a href="https://www.itsmyhealthinsurance.com.au/advice/12-tips-for-keeping-your-newborn-healthy/" target="_blank" rel="noopener noreferrer">12 Tips for Keeping Your Newborn Healthy</a></li>
-            <li><a href="https://onlinelibrary.wiley.com/doi/10.1155/2020/3124847" target="_blank" rel="noopener noreferrer">Wiley Online Library: Pregnancy Study</a></li>
-            <li><a href="https://www.betterhealth.vic.gov.au/health/healthyliving/pregnancy-week-by-week" target="_blank" rel="noopener noreferrer">Better Health: Pregnancy Week-by-Week</a></li>
-            <li><a href="https://www.healthywomen.org/content/article/pregnancy-and-parenting-articles" target="_blank" rel="noopener noreferrer">HealthyWomen: Pregnancy and Parenting</a></li>
-            <li><a href="https://www.healthline.com/health/pregnancy/dos-and-donts#pregnancy-donts" target="_blank" rel="noopener noreferrer">Healthline: Pregnancy Dos and Don’ts</a></li>
-            <li><a href="https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-022-02632-6" target="_blank" rel="noopener noreferrer">BMC Medicine: Pregnancy Research</a></li>
-            <li><a href="https://www.ajog.org/article/S0002-9378(21)02728-9/fulltext" target="_blank" rel="noopener noreferrer">American Journal of Obstetrics and Gynecology: Study</a></li>
-            <li><a href="https://bmcpregnancychildbirth.biomedcentral.com/articles/10.1186/s12884-018-2087-4" target="_blank" rel="noopener noreferrer">BMC Pregnancy and Childbirth: Research Article</a></li>
-            <li><a href="https://my.clevelandclinic.org/health/articles/7247-fetal-development-stages-of-growth" target="_blank" rel="noopener noreferrer">Cleveland Clinic: Fetal Development</a></li>
-          
-          </ul>
+      
           
         </div>
       </div>
@@ -176,8 +165,11 @@ case 'contact':
           <main className="home">
             <div className="background-image"></div> {/* Background Image */}
             <div className="intro">
-              <h1>Welcome to Our Community</h1>
-              <p>Explore the community</p>
+              <h1>welcome to nurture hub</h1>
+              <h2>Your ultimate destination for fitness, health, and wellness. 
+              Join our community, share your journey, and achieve your goals!</h2>
+
+              
             </div>
           </main>
         );

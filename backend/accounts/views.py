@@ -1,30 +1,19 @@
-from django.contrib.auth.models import User
-from rest_framework import status
+from rest_framework import generics, status
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
-from django.contrib.auth import authenticate, login
+from rest_framework.views import APIView
+from django.contrib.auth import login
+from django.contrib.auth.models import User  # Import User model
+from .serializers import UserSerializer, LoginSerializer
 
-@api_view(['POST'])
-def signup(request):
-    username = request.data.get("username")
-    password = request.data.get("password")
-    email = request.data.get("email")
-    
-    if User.objects.filter(username=username).exists():
-        return Response({"error": "Username already taken."}, status=status.HTTP_400_BAD_REQUEST)
-    
-    user = User.objects.create_user(username=username, password=password, email=email)
-    user.save()
-    return Response({"message": "User created successfully"}, status=status.HTTP_201_CREATED)
+class SignupView(generics.CreateAPIView):
+    queryset = User.objects.all()  # Use User model here
+    serializer_class = UserSerializer
 
-@api_view(['POST'])
-def login_view(request):
-    username = request.data.get("username")
-    password = request.data.get("password")
-    user = authenticate(request, username=username, password=password)
-    
-    if user is not None:
-        login(request, user)
-        return Response({"message": "Login successful"}, status=status.HTTP_200_OK)
-    else:
-        return Response({"error": "Invalid credentials"}, status=status.HTTP_400_BAD_REQUEST)
+class LoginView(APIView):
+    def post(self, request):
+        serializer = LoginSerializer(data=request.data)
+        if serializer.is_valid():
+            user = serializer.validated_data['user']
+            login(request, user)  # Log the user in
+            return Response({"message": "Login successful"}, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
