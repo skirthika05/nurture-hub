@@ -141,7 +141,7 @@ button.signup {
 }
 .intro-box {
   height: 20px;
-  width: 70%; /* Adjust to control width */
+  width: 75%; /* Adjust to control width */
   padding: 220px;
   border-radius: 10px;
   background-image: linear-gradient(rgba(235, 237, 228, 0.7),rgba(235, 237, 228, 0.7)),url('C:\Users\varun sharma\OneDrive\Desktop\nurture hub\motherhood-website\src\images\community-bg.jpg'); /* Replace with actual image path */
@@ -248,7 +248,7 @@ footer {
 
 .opinion-form button {
   background-color: #5b5f3e; /* Match your theme */
-  color: white;
+  color: #d4cab1;
   border: none;
   border-radius: 20px;
   padding: 10px 20px;
@@ -317,4 +317,26 @@ footer {
   top: 0;
   width: 100%;
   z-index: 1000;
+}
+
+.contact-section {
+  padding: 80px 20px;
+  background-color: #d4cab1;
+  text-align: center;
+}
+
+.contact-section h2 {
+  color: #a46b4d;
+  font-size: 2em;
+}
+
+.contact-details {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-details li {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #3a3a3a;
 }
