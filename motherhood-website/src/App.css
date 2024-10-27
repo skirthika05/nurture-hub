@@ -2,14 +2,20 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #FAF6F1; /* Light grey background for all pages */
-  color: #4B6587; /* Primary text color */
+  background-color: #d4cab1; /* Light grey background for all pages */
+  color: #a46b4d; /* Primary text color */
 }
 
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  position: relative;/* Full height to make footer stick to bottom */
 }
-
+main {
+  flex-grow: 1;
+  
+}
 /* Navbar Styles */
 .navbar {
   display: flex;
@@ -33,14 +39,14 @@ body {
   text-decoration: none;
   background: none;
   border: none;
-  color: #4B6587;
+  color: #a46b4d;
   font-weight: bold;
   cursor: pointer;
   font-size: 18px; /* Adjust as needed */
 }
 
 .navbar ul li button:hover {
-  color: #28A745;
+  color: #8b8964;
 }
 
 .auth-buttons {
@@ -57,12 +63,12 @@ body {
 }
 
 button.login {
-  background-color: #4B6587;
+  background-color: #5b5f3e;
   color: white;
 }
 
 button.signup {
-  background-color: #28A745;
+  background-color: #8b8964;
   color: white;
 }
 
@@ -77,17 +83,17 @@ button.signup {
 
 .background-image {
   position: absolute;
-  top: 50;
-  left: 20;
-  width: 100%;
+  margin-top: 100px;
+  width: 110%;
   height: 100%;
-  background-image: url('C:\Users\varun sharma\OneDrive\Desktop\nurture hub\motherhood-website\src\images\img1.jpg');
+  background-image: linear-gradient(rgba(235, 237, 228, 0.7),rgba(235, 237, 228, 0.7)), url('C:\Users\varun sharma\OneDrive\Desktop\nurture hub\motherhood-website\src\images\img1.jpg');
   background-size: cover;
   background-position: center;
   z-index: -1;
 }
 
 .intro {
+  padding: auto;
   position: relative;
   z-index: 1;
   text-align: center;
@@ -98,7 +104,7 @@ button.signup {
 }
 
 .intro p {
-  font-size: 24px;
+  font-size: 30px;
 }
 
 /* Community Page */
@@ -106,7 +112,7 @@ button.signup {
 .section-heading {
   font-weight: bold; /* Make the text bold */
   font-size: 24px; /* Adjust font size */
-  background-color: #446289; /* Background color */
+  background-color: #a46b4d; /* Background color */
   color: white; /* Text color */
   padding: 10px 15px; /* Padding for the background */
   border-radius: 15px; /* Curved corners */
@@ -116,34 +122,70 @@ button.signup {
 
 /* Community Page */
 .community-section {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 60px); /* Adjust height considering navbar */
-  background-color: white; /* Community section background */
-  padding: 50px;
-  display: flex; /* Enable flexbox layout */
-  margin-top: 60px; /* Push down to avoid overlap with navbar */
-  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  flex-grow: 1;
+  padding-top: 130px;
+  display: flex;
+  flex-direction: column; /* Arrange children in a column */
+  min-height: calc(100vh - 60px); /* Full height minus navbar */
 }
 
+.intro {
+  
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: #f8f9fa; /* Light background for visibility */
+  padding: 20px;
+}
+.intro-box {
+  height: 20px;
+  width: 70%; /* Adjust to control width */
+  padding: 220px;
+  border-radius: 10px;
+  background-image: linear-gradient(rgba(235, 237, 228, 0.7),rgba(235, 237, 228, 0.7)),url('C:\Users\varun sharma\OneDrive\Desktop\nurture hub\motherhood-website\src\images\community-bg.jpg'); /* Replace with actual image path */
+  background-size: cover;
+  background-position: center;
 
-/* Other styles remain unchanged */
-
-
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .content-section {
-  display: flex; /* Flexbox for the two halves */
-  justify-content: space-between; /* Space between two halves */
-  width: 100%; /* Full width */
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex: 1; /* Take up remaining space */
+  justify-content: space-around; /* Space out threads and discover */
+  padding: 20px;
 }
 
 .threads, .discover {
-  width: 47%; /* Adjust to occupy half of the space */
-  padding: 20px;
-  background-color: #FAF6F1; /* Card background color */
+  flex:1;
+  width: 44%; /* Adjust to occupy half of the space */
+  padding: 15px;
+  height: 400px;
+  background-color: #d4cab1; /* Card background color */
   border-radius: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow-y: scroll;
 }
-
+footer {
+  background-color: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
 /* Search Bar Styles */
 .search-bar {
   margin-bottom: 20px; /* Space between search bar and other elements */
@@ -157,8 +199,9 @@ button.signup {
 }
 /* Additional Image Styles */
 .section-image {
-  width: 150px; /* Adjust the width as needed */
-  margin-left: 20px; /* Space between the text and image */
+  
+  width: 250px; /* Adjust the width as needed */
+  margin-left: 100px; /* Space between the text and image */
   float: center; /* Align images to the right */
 }
 
@@ -172,15 +215,60 @@ button.signup {
   width: 100px; /* Width for additional images */
   border-radius: 5px; /* Rounded corners */
 }
+.resources-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
 
+.resources-list li {
+  margin: 8px 0;
+}
 
+.resources-list a {
+  color: #a46b4d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.resources-list a:hover {
+  color: #8b8964;
+}
+
+.opinion-form {
+  margin: 20px 0;
+}
+
+.opinion-form textarea {
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.opinion-form button {
+  background-color: #5b5f3e; /* Match your theme */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.opinion-form button:hover {
+  background-color: #8b8964; /* Match your theme */
+}
+
+.opinions-section {
+  margin-top: 20px;
+}
 
 /* Auth Pages */
 .auth-page {
   padding: 50px;
   margin-top: 80px;
   text-align: center;
-  background-color: #FAF6F1; /* Auth page background */
+  background-color: #d4cab1; /* Auth page background */
 }
 
 .auth-form {
@@ -192,7 +280,7 @@ button.signup {
 
 .auth-form label {
   font-weight: bold;
-  color: #4B6587; /* Label text color */
+  color: #a46b4d; /* Label text color */
 }
 
 .auth-form input {
@@ -204,7 +292,7 @@ button.signup {
 
 .auth-form button {
   padding: 10px 20px;
-  background-color: #4B6587; /* Button color */
+  background-color: #a46b4d; /* Button color */
   color: white;
   border: none;
   cursor: pointer;
@@ -213,4 +301,20 @@ button.signup {
 
 .auth-form button:hover {
   background-color: #354259; /* Darker shade for hover */
+}
+
+/* General content container adjustment */
+.page-content {
+  padding-top: 80px; /* Adjust based on navbar height, e.g., 60px or more */
+  margin-top: 20px; /* Additional margin to prevent overlap */
+}
+
+/* Navbar adjustments for spacing consistency */
+.navbar {
+  height: 60px; /* Adjust as per navbar height */
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
